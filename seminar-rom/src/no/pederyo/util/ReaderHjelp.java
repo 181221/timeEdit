@@ -3,30 +3,57 @@ package no.pederyo.util;
 import no.pederyo.model.Hendelse;
 import no.pederyo.model.Rom;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ReaderHjelp {
+    public static ArrayList<Rom> allerom;
 
-    public static Rom setOppData(String[] felt) {
+    public ReaderHjelp() {
+        allerom = new ArrayList<>();
+    }
+    public void setOppData(String[] felt) {
         String dato = felt[0];
         String start = felt[1].substring(1);
         String slutt = felt[3].substring(1);
         String romnavn =  parseRomNavn(felt[5].substring(1));
-        Rom r = lagRom(romnavn);
         Hendelse h = lagHendelse(dato, start, slutt);
-        r.getHendelser().add(h);
-        return r;
+        if(!inneholder(romnavn)) {
+            Rom r = lagRom(romnavn);
+            r.getHendelser().add(h);
+            allerom.add(r);
+        }else{
+            finnRomOgLeggTil(romnavn,  h);
+        }
     }
-    public static String parseData(String data) {
+    public boolean inneholder(String r) {
+        for(int i = 0; i < allerom.size(); i ++) {
+            if(allerom.get(i).getNavn().equals(r)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public void finnRomOgLeggTil(String r, Hendelse h ) {
+        for(int i = 0; i < allerom.size(); i ++) {
+            Rom rom = allerom.get(i);
+            if(rom.getNavn() != null) {
+                if(r.equals(rom.getNavn())) {
+                    allerom.get(i).getHendelser().add(h);
+                }
+            }
+        }
+    }
+    public String parseData(String data) {
         String dataString = data;
         switch (data) {
             case "romnavn": dataString = parseRomNavn(data);
-            break;
+                break;
         }
         return dataString;
 
     }
-    public static String parseRomNavn(String rom) {
+    public String parseRomNavn(String rom) {
         if(rom.contains("\"")) {
             rom = rom.replace('"', ' ').substring(1);
         }
@@ -36,7 +63,7 @@ public class ReaderHjelp {
         return rom;
     }
 
-    public static Hendelse lagHendelse(String dato, String start, String slutt) {
+    public Hendelse lagHendelse(String dato, String start, String slutt) {
         Hendelse h = new Hendelse();
         h.setDato(dato);
         h.setStart(start);
@@ -49,4 +76,14 @@ public class ReaderHjelp {
         r.setNavn(romnavn);
         return r;
     }
+
+    public ArrayList<Rom> getAllerom() {
+        return allerom;
+    }
+
+    public void setAllerom(ArrayList<Rom> allerom) {
+        this.allerom = allerom;
+    }
+
+
 }
