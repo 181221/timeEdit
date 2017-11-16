@@ -48,4 +48,14 @@ public class Hendelse {
     public void setRom(Rom rom) {
         this.rom = rom;
     }
+
+    @Override
+    public String toString() {
+        return "Hendelse{" +
+                "dato='" + dato + '\'' +
+                ", start='" + start + '\'' +
+                ", slutt='" + slutt + '\'' +
+                ", rom=" + rom +
+                '}';
+    }
 }

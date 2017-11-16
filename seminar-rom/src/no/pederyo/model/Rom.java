@@ -48,6 +48,15 @@ public class Rom {
     public void setHendelser(List<Hendelse> hendelser) {
         this.hendelser = hendelser;
     }
+
+    @Override
+    public String toString() {
+        return "Rom{" +
+                "navn='" + navn + '\'' +
+                ", erOpptatt=" + erOpptatt +
+                ", hendelser=" + hendelser +
+                '}';
+    }
 }
 
 
