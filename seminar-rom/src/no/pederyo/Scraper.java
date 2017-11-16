@@ -49,7 +49,9 @@ public class Scraper {
         login.submit();
         driver.navigate().to(SEMINAR_ROM1);
         List<Rom> r = readCSVInternett(SEMINAR_ROM1);
-
+        for(Rom rom : r) {
+            rom.getNavn();
+        }
 
     }
 }
