@@ -7,9 +7,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Arrays;
 
-public class CsvReader {
+public class CsvReaderUtil {
     public static void readCSVInternett(String urlen) throws IOException {
-        //https://no.timeedit.net/web/hib/db1/student/ri1Q54.csv
+
         String URL = urlen;
         if (URL.contains("html")) {
             URL = URL.replace("html", "csv");
