@@ -42,24 +42,16 @@ public class Booker {
         driver.findElement(By.className("objectinputsearchbutton")).click();
         sleep(1000);
         WebElement gruppeRom = driver.findElement(By.className("infolinkobject"));
+
+        sleep(2000);
         gruppeRom.click();
-        long start = System.currentTimeMillis();
-        sleep(1000);
-        ((JavascriptExecutor) driver).executeAsyncScript(
-                "console.log(\"hei\")",
-                "var book = document.querySelector(\"#newResTimeDiv > tbody > tr > td.first > select.ui-widget.ui-state-default.timedrop.timeHourStart2\")",
-                "window.setTimeout(arguments[arguments.length - 1], 500);",
-                "console.log(book)"
+        sleep(3000);
 
-        );
-
-
-        WebElement k = driver.findElement(By.xpath("//*[@id=\"newResTimeDiv\"]/tbody/tr/td[1]/select[1]"));
-        System.out.println(k.getText());
-        System.out.println("Elapsed time: " + (System.currentTimeMillis() - start));
-        //WebElement book = driver.findElement(By.tagName("#objectselectionresult > table > tbody > tr:nth-child(3) > td > div.weekContainer > div:nth-child(5) > div.weekDiv > div.slotfree2.slotfreetarget"));
-        //book.click();
-        //sleep(10000);
+        sleep(10000);
+        WebElement box = driver.findElement(By.id("newResTimeDiv"));
+        driver.findElement(By.className("slotfree"));
+        System.out.println("prøvde å klikke");
+        sleep(10000);
         //driver.quit();
     }
 }
