@@ -3,26 +3,37 @@ package no.pederyo.util;
 import no.pederyo.model.Hendelse;
 import no.pederyo.model.Rom;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import static no.pederyo.util.ReaderHjelp.allerom;
 
 public class RomUtil {
-    public static String FOERSTE_LEDIG = "";
+    public static ArrayList<String> ledigerom = new ArrayList<>();
+    public static ArrayList<Hendelse> ledigehendelser = new ArrayList<>();
 
-    public static void printUtRomOgHendelse() {
-        for (Rom r : allerom) {
-            System.out.print("romnavn " + r.getNavn() + " ");
-            for (Hendelse h : r.getHendelser()) {
-                System.out.print(h.toString() + ", ");
+    public static String LedigNaa() {
+        int naa = hentTime();
+        boolean funnet = false;
+        String rommet = "Ingen ledige nå";
+        for (int i = 0; i < ledigehendelser.size() - 1 && !funnet; i++) {
+            Hendelse h = ledigehendelser.get(i);
+            int timen = Integer.parseInt(h.getSlutt().toString().substring(0, 2));
+            if (naa == timen) {
+                rommet = "ledig nå: " + h.getRom();
+                funnet = true;
+            } else if ((timen - naa) == 1) {
+                rommet = h.getRom() + " ledig fra: " + " " + h.getSlutt() + " Til: " + ledigehendelser.get(i + 1).getSlutt();
+                funnet = true;
             }
-            System.out.println();
         }
+        return rommet;
     }
 
-    private static ArrayList<String> finnLedig() {
+    public static ArrayList<String> finnAlleLedige() {
         String ledige;
-        ArrayList<String> ledigerom = new ArrayList<>();
         for (int i = 0; i < allerom.size(); i++) {
             Rom r = allerom.get(i);
             int lengde = r.getHendelser().size();
@@ -32,10 +43,10 @@ public class RomUtil {
                 if (erLedig(h, h1)) {
                     ledige = "Rom: " + r.getNavn() + " Er ledig fra: " + h.getSlutt() + " til: " + h1.getStart();
                     ledigerom.add(ledige);
+                    ledigehendelser.add(h);
                 }
             }
         }
-        FOERSTE_LEDIG = ledigerom.get(0);
         return ledigerom;
     }
 
@@ -46,13 +57,30 @@ public class RomUtil {
         return diff >= 100;
     }
 
+    private static int hentTime() {
+        DateFormat dateFormat = new SimpleDateFormat("HH");
+        Date date = new Date();
+        return Integer.parseInt(dateFormat.format(date));
+    }
+
+
     public static String lagMsg() {
         StringBuilder sb = new StringBuilder();
-        for (String s : finnLedig()) {
+        for (String s : finnAlleLedige()) {
             sb.append(s);
             sb.append("\n");
         }
         return sb.toString();
+    }
+
+    public static void printUtRomOgHendelse() {
+        for (Rom r : allerom) {
+            System.out.print("romnavn " + r.getNavn() + " ");
+            for (Hendelse h : r.getHendelser()) {
+                System.out.print(h.toString() + ", ");
+            }
+            System.out.println();
+        }
     }
 
 }

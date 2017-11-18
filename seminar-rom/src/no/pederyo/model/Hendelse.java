@@ -4,13 +4,13 @@ public class Hendelse {
     private String dato;
     private String start;
     private String slutt;
-    private Rom rom;
+    private String rom;
 
     public Hendelse() {
         this("","","",null);
     }
 
-    public Hendelse(String dato, String start, String slutt, Rom rom) {
+    public Hendelse(String dato, String start, String slutt, String rom) {
         this.dato = dato;
         this.start = start;
         this.slutt = slutt;
@@ -41,11 +41,11 @@ public class Hendelse {
         this.slutt = slutt;
     }
 
-    public Rom getRom() {
+    public String getRom() {
         return rom;
     }
 
-    public void setRom(Rom rom) {
+    public void setRom(String rom) {
         this.rom = rom;
     }
 
