@@ -21,10 +21,7 @@ public class Scraper {
 
     public static void main(String[] args) throws IOException {
         // setup driver.
-        System.setProperty("webdriver.chrome.driver", DRIVER_LOKAL);
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
-        WebDriver driver = new ChromeDriver(chromeOptions);
+        WebDriver driver = setUpDriver();
         driver.navigate().to(LOGIN_FEIDE);
 
         // manipuler dom
@@ -40,6 +37,13 @@ public class Scraper {
         readCSVInternett(ALLESEMINAR);
         driver.quit();
         setUpMail(TILMAIL, RomUtil.lagMsg(), SUBJECT_LEDIGE_ROM);
+    }
+
+    private static WebDriver setUpDriver() {
+        System.setProperty("webdriver.chrome.driver", DRIVER_LOKAL);
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        return new ChromeDriver(chromeOptions);
     }
 
 }
