@@ -197,6 +197,13 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="twilio-7.16.0-jar-with-dependencies">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../h181221.github.io/Scrape/JARS/twilio-7.16.0-jar-with-dependencies.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="masterDetails">
     <states>

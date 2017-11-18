@@ -12,6 +12,7 @@ import java.io.IOException;
 import static no.pederyo.model.Mail.TILMAIL;
 import static no.pederyo.util.CsvReaderUtil.readCSVInternett;
 import static no.pederyo.util.MailUtil.setUpMail;
+import static no.pederyo.util.RomUtil.FOERSTE_LEDIG;
 
 public class Scraper {
     private static final String SUBJECT_LEDIGE_ROM = "Ledige rom: ";
@@ -31,12 +32,16 @@ public class Scraper {
         username.sendKeys(System.getenv("FEIDE_B"));
         pw.sendKeys(System.getenv("FEIDE_P"));
 
-        // login og submit
+        // login og submit.
         login.submit();
         driver.navigate().to(ALLESEMINAR);
         readCSVInternett(ALLESEMINAR);
         driver.quit();
-        setUpMail(TILMAIL, RomUtil.lagMsg(), SUBJECT_LEDIGE_ROM);
+
+        // send sms og mail.
+        String msg = RomUtil.lagMsg();
+        setUpMail(TILMAIL, msg, SUBJECT_LEDIGE_ROM);
+        TwilioSMS.SendSMS(FOERSTE_LEDIG);
     }
 
     private static WebDriver setUpDriver() {

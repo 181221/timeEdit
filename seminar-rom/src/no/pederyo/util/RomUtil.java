@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import static no.pederyo.util.ReaderHjelp.allerom;
 
 public class RomUtil {
+    public static String FOERSTE_LEDIG = "";
 
     public static void printUtRomOgHendelse() {
         for (Rom r : allerom) {
@@ -34,6 +35,7 @@ public class RomUtil {
                 }
             }
         }
+        FOERSTE_LEDIG = ledigerom.get(0);
         return ledigerom;
     }
 
