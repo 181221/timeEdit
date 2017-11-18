@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c15f578-8f6f-458b-9ee3-5f3277cc09e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/no/pederyo/klient/Scraper.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/no/pederyo/Scraper.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seminar-rom.ipr" afterPath="$PROJECT_DIR$/seminar-rom.ipr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seminar-rom.iws" afterPath="$PROJECT_DIR$/seminar-rom.iws" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,11 +26,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CsvReaderUtil.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CsvReaderUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/no/pederyo/util/CsvReaderUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
               <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -66,6 +74,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/no/pederyo/Scraper.java" />
         <option value="$PROJECT_DIR$/src/no/pederyo/klient/Scraper.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -768,12 +777,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510962962696</updated>
-      <workItem from="1510962965990" duration="807000" />
+      <workItem from="1510962965990" duration="923000" />
     </task>
+    <task id="LOCAL-00001" summary="123">
+      <created>1510963786675</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1510963786675</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="807000" />
+    <option name="totallyTimeSpent" value="923000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
@@ -818,6 +835,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="123" />
+    <option name="LAST_COMMIT_MESSAGE" value="123" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -847,6 +868,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
