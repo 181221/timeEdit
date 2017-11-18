@@ -182,6 +182,14 @@
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
   </component>
   <component name="libraryTable">
+    <library name="activation">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../h181221.github.io/dat104/jspmailer/Jars/activation.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../h181221.github.io/dat104/jspmailer/Jars/javax.mail.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="selenium-server-standalone-3.7.1">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/../../h181221.github.io/Scrape/selenium-server-standalone-3.7.1.jar!/" />
