@@ -1,4 +1,4 @@
-package no.pederyo;
+package no.pederyo.klient;
 
 import no.pederyo.model.Hendelse;
 import no.pederyo.model.Rom;
